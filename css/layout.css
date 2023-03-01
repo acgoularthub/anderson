@@ -15,9 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-
 /* Main Page Layout */
 
 #main-content {
@@ -26,9 +23,6 @@ body {
   flex-direction: column;
   gap: 96px;
 }
-
-
-
 
 /* Portfolio Header */
 
@@ -57,9 +51,6 @@ body {
   flex-basis: 50%;
 }
 
-
-
-
 /* About Section */
 
 #about-section {
@@ -73,9 +64,6 @@ body {
   flex-direction: column;
   gap: 34px;
 }
-
-
-
 
 /* Project Section */
 
@@ -91,30 +79,27 @@ body {
   flex-wrap: wrap;
 }
 
-    /* Project Cards */
+/* Project Cards */
 
-    .project-card {
-      max-width: calc((100% - 32px) / 3);
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
+.project-card {
+  max-width: calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
 
-    .project-card-text-container {
-      flex-direction: column;
-      display: flex;
-      gap: 16px
-    }
+.project-card-text-container {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+}
 
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-
-
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Project Pages */
 
@@ -127,6 +112,8 @@ body {
 .project-header-image {
   width: 100%;
   height: auto;
+
+  border: 1px solid black;
 }
 
 #project-details {
@@ -141,36 +128,37 @@ body {
   gap: 34px;
 }
 
-    /* Project Gallery */
+/* Project Gallery */
 
-    #project-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+#project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .project-gallery-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px 16px;
-    }
+.project-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px 16px;
+}
 
-    .gallery-image-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.gallery-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .gallery-image-container.half-width {
-      width: calc((100% - 16px) / 2);
-    }
+.gallery-image-container.half-width {
+  width: calc((100% - 16px) / 2);
+}
 
-    .gallery-image {
-      width: 100%;
-      height: auto;
-    }
+.gallery-image {
+  width: 100%;
+  height: auto;
 
+  border: 1px solid black;
+}
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {
@@ -218,6 +206,3 @@ body {
     max-width: 100%;
   }
 }
-
-
-

@@ -2,27 +2,40 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./images/lambda.png" />
+    <link rel="icon" href="./images/lambda.png" alt="Anderson Coelho Goulart Portfolio Icon" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
       name="description"
-      content="Profissional desenvolvedor backend / suporte, com conhecimento na área de infraestrutura"
+      content="Anderson Coelho Goulart - Desenvolvedor Backend e Engenheiro de Suporte com +9 anos de experiência. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python e infraestrutura de TI."
     />
     <meta
       name="keywords"
-      content="resume, apresentação, institucional, backend, suporte"
+      content="Anderson Coelho Goulart, desenvolvedor backend, backend developer, support engineer, Node.js, JavaScript, React, .NET, C#, SQL, Docker, Python, infraestrutura TI, portfolio"
     />
-    <meta name="author" content="templatemo" />
+    <meta name="author" content="Anderson Coelho Goulart" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
 
-    <title>Anderson coelho goulart</title>
-    <!--
-Stimulus Template
-http://www.templatemo.com/tm-498-stimulus
--->
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#E3AE57">
+    <link rel="canonical" href="https://acgoularthub.github.io/anderson/" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Anderson Coelho Goulart - Desenvolvedor Backend & Engenheiro de Suporte">
+    <meta property="og:description" content="Desenvolvedor Backend e Engenheiro de Suporte com +9 anos de experiência. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python e infraestrutura de TI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acgoularthub.github.io/anderson/">
+    <meta property="og:image" content="https://acgoularthub.github.io/anderson/images/lambda.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anderson Coelho Goulart - Desenvolvedor Backend & Engenheiro de Suporte">
+    <meta name="twitter:description" content="Desenvolvedor Backend e Engenheiro de Suporte com +9 anos de experiência. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python e infraestrutura de TI.">
+
+    <title>Anderson Coelho Goulart | Desenvolvedor Backend & Engenheiro de Suporte</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -32,7 +45,27 @@ http://www.templatemo.com/tm-498-stimulus
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700"
       rel="stylesheet"
+      crossorigin="anonymous"
     />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anderson Coelho Goulart",
+      "jobTitle": "Backend Developer & Support Engineer",
+      "url": "https://acgoulart.pro",
+      "sameAs": [
+        "https://www.linkedin.com/in/acgoulart/",
+        "https://github.com/acgoularthub"
+      ],
+      "email": "anderson@acgoulart.pro",
+      "knowsAbout": ["Node.js", "JavaScript", "React", ".NET", "C#", "SQL", "NoSQL", "Docker", "Git", "Python", "LLM", "Prompt Engineering"],
+      "alumniOf": "Universidade do Estado do Rio Grande do Norte",
+      "description": "Desenvolvedor Backend e Engenheiro de Suporte com +9 anos de experiência em TI, infraestrutura e desenvolvimento de software"
+    }
+    </script>
   </head>
   <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
     <!-- PRE LOADER -->
@@ -58,7 +91,7 @@ http://www.templatemo.com/tm-498-stimulus
             <span class="icon icon-bar"></span>
             <span class="icon icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand"></a>
+          <a href="#home" class="navbar-brand smoothScroll" aria-label="Voltar ao início"></a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -341,7 +374,7 @@ http://www.templatemo.com/tm-498-stimulus
             </h2>
             <p class="wow fadeInUp whitening" data-wow-delay="1s">
               Marcos Vinicius Diógenes (Citação parcial obtida no
-              <a href="https://www.linkedin.com/in/acgoulart/" target="_blank"
+              <a href="https://www.linkedin.com/in/acgoulart/" target="_blank" rel="noopener noreferrer"
                 >LinkedIn</a
               >)
             </p>
@@ -366,7 +399,7 @@ http://www.templatemo.com/tm-498-stimulus
               </div>
 
               <div id="contact-form">
-                <form action="#template-mo" method="post">
+                <form action="#template-mo" method="post" novalidate>
                   <div class="wow fadeInUp" data-wow-delay="1s">
                     <input
                       name="fullname"
@@ -374,6 +407,8 @@ http://www.templatemo.com/tm-498-stimulus
                       class="form-control"
                       id="fullname"
                       placeholder="Seu nome"
+                      autocomplete="name"
+                      disabled
                     />
                   </div>
                   <div class="wow fadeInUp" data-wow-delay="1.2s">
@@ -383,6 +418,8 @@ http://www.templatemo.com/tm-498-stimulus
                       class="form-control"
                       id="email"
                       placeholder="Seu e-mail"
+                      autocomplete="email"
+                      disabled
                     />
                   </div>
                   <div class="wow fadeInUp" data-wow-delay="1.4s">
@@ -392,6 +429,7 @@ http://www.templatemo.com/tm-498-stimulus
                       class="form-control"
                       id="message"
                       placeholder="Escreva sua mensagem"
+                      disabled
                     ></textarea>
                   </div>
                   <div
@@ -404,6 +442,7 @@ http://www.templatemo.com/tm-498-stimulus
                       class="form-control"
                       id="submit"
                       value="Enviar"
+                      disabled
                     />
                   </div>
                 </form>
@@ -467,7 +506,7 @@ http://www.templatemo.com/tm-498-stimulus
             <div class="wow fadeInUp footer-copyright" data-wow-delay="1.8s">
               <p>
                 Copyright &copy; 2025 Anderson Coelho Goulart | Design:
-                <a href="https://templatemo.com/" target="_parent"
+                <a href="https://templatemo.com/" target="_parent" rel="noopener noreferrer"
                   >templatemo</a
                 >
               </p>

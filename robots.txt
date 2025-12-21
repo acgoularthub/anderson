@@ -1,3 +1,10 @@
+# robots.txt para www.acgoulart.pro
 User-agent: *
 Allow: /
-Sitemap: https://acgoularthub.github.io/anderson/sitemap.xml
+Disallow: /images/
+
+# Sitemap
+Sitemap: https://www.acgoulart.pro/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

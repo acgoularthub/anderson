@@ -1,10 +1,18 @@
-# robots.txt para www.acgoulart.pro
+# ============================================
+# ROBOTS.TXT - Anderson Goulart Portfolio
+# https://andersongoulart.dev
+# ============================================
+
+# Permitir todos os crawlers
 User-agent: *
 Allow: /
-Disallow: /images/
+
+# Bloquear diretórios sensíveis (se houver)
+Disallow: /private/
+Disallow: /*.json$
 
 # Sitemap
-Sitemap: https://www.acgoulart.pro/sitemap.xml
+Sitemap: https://andersongoulart.dev/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay para evitar sobrecarga (opcional)
 Crawl-delay: 1

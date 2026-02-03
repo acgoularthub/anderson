@@ -1,673 +1,1147 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- ============================================
+         META TAGS BÁSICAS
+         ============================================ -->
     <meta charset="UTF-8" />
-    <link rel="icon" href="./images/lambda.png" alt="Anderson Coelho Goulart Portfolio Icon" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    
-    <!-- SEO Meta Tags Avançado -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ============================================
+         CSP - Content Security Policy (Segurança)
+         ============================================ -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://formspree.io;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self' https://formspree.io;
+        form-action https://formspree.io;
+        frame-ancestors 'none';
+        base-uri 'self';
+    "
+    />
+
+    <!-- ============================================
+         SEO - TÍTULO E DESCRIÇÃO
+         ============================================ -->
+    <title>Anderson Coelho Goulart | Desenvolvedor Backend &amp; SRE</title>
     <meta
       name="description"
-      content="Anderson Coelho Goulart - Programador Backend e Fullstack Developer com +9 anos de experiência. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python, LLM e infraestrutura de TI. Desenvolvedor backend focado em soluções escaláveis."
+      content="Desenvolvedor Backend e Engenheiro de Suporte com 9+ anos de experiência em JavaScript, Node.js, TypeScript, Docker, C# e infraestrutura cloud. Especialista em DevOps e SRE."
     />
     <meta
       name="keywords"
-      content="Anderson Coelho Goulart, programador backend, fullstack developer, desenvolvedor backend, backend developer, support engineer, Node.js, JavaScript, React, .NET, C#, SQL, NoSQL, Docker, Python, LLM, Prompt Engineering, infraestrutura TI, portfolio, desenvolvedor fullstack, engenheiro de software"
+      content="Anderson Goulart, desenvolvedor backend, SRE, DevOps, JavaScript, Node.js, TypeScript, Docker, C#, Linux, cloud, infraestrutura"
     />
     <meta name="author" content="Anderson Coelho Goulart" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://andersongoulart.dev/" />
+
+    <!-- ============================================
+         OPEN GRAPH (Facebook, LinkedIn)
+         ============================================ -->
+    <meta property="og:type" content="website" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
+      property="og:title"
+      content="Anderson Coelho Goulart | Desenvolvedor Backend & SRE"
     />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#E3AE57">
-    
-    <!-- Segurança HTTPS/SSL -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://web3forms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com;">
-    <meta http-equiv="upgrade-insecure-requests">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.acgoulart.pro/" />
+    <meta
+      property="og:description"
+      content="Desenvolvedor Backend e Engenheiro de Suporte com 9+ anos de experiência. Especialista em JavaScript, Node.js, TypeScript, Docker e infraestrutura cloud."
+    />
+    <meta
+      property="og:image"
+      content="https://i.ytimg.com/vi/5a2LS7gNECk/maxresdefault.jpg"
+    />
+    <meta property="og:url" content="https://andersongoulart.dev/" />
+    <meta property="og:site_name" content="Anderson Goulart - Portfolio" />
+    <meta property="og:locale" content="pt_BR" />
 
-    <!-- Open Graph Meta Tags Otimizadas -->
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Anderson Coelho Goulart - Portfolio">
-    <meta property="og:title" content="Anderson Coelho Goulart - Programador Backend & Fullstack Developer">
-    <meta property="og:description" content="Desenvolvedor Backend e Fullstack com +9 anos de experiência em TI. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python e infraestrutura. Portfólio profissional completo.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.acgoulart.pro/">
-    <meta property="og:image" content="https://www.portfolioreinsurance.com/wp-content/uploads/2023/01/2023-Portfolio-logo-thumb.jpg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="Anderson Coelho Goulart - Portfolio Logo">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Anderson Coelho Goulart - Programador Backend & Fullstack Developer">
-    <meta name="twitter:description" content="Desenvolvedor Backend e Fullstack com +9 anos de experiência em TI. Especialista em Node.js, JavaScript, React, .NET/C#, SQL, Docker, Python e infraestrutura.">
-    <meta name="twitter:image" content="https://i.ytimg.com/vi/StoOtukWSME/maxresdefault.jpg">
-    <meta name="twitter:image:alt" content="Anderson Coelho Goulart - Portfolio Logo">
-    <meta name="twitter:creator" content="@acgoulart">
-    <meta name="twitter:site" content="@acgoulart">
-
-    <title>Anderson Coelho Goulart | Programador Backend & Fullstack Developer</title>
-    
-    <!-- Preconnect para recursos externos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://api.web3forms.com" crossorigin>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/templatemo-style.css" />
-    <link rel="stylesheet" href="./detail.css" />
-
-    <!-- Google Fonts com SRI -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700"
-      rel="stylesheet"
-      crossorigin="anonymous"
+    <!-- ============================================
+         TWITTER CARDS
+         ============================================ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anderson Coelho Goulart | Desenvolvedor Backend & SRE"
+    />
+    <meta
+      name="twitter:description"
+      content="Desenvolvedor Backend e Engenheiro de Suporte com 9+ anos de experiência em JavaScript, Node.js, TypeScript, Docker e cloud."
+    />
+    <meta
+      name="twitter:image"
+      content="https://avatars.githubusercontent.com/u/11652136?v=4"
     />
 
-    <!-- Structured Data Enriquecido -->
+    <!-- ============================================
+         SCHEMA.ORG - DADOS ESTRUTURADOS
+         ============================================ -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Anderson Coelho Goulart",
-      "jobTitle": "Backend Developer & Fullstack Developer",
-      "description": "Programador Backend e Fullstack Developer com mais de 9 anos de experiência em desenvolvimento de software, suporte técnico e infraestrutura de TI",
-      "url": "https://www.acgoulart.pro",
-      "image": "https://i.ytimg.com/vi/5a2LS7gNECk/maxresdefault.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/acgoulart/",
-        "https://github.com/acgoularthub"
-      ],
-      "email": "anderson@acgoulart.pro",
-      "telephone": "+55",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nordeste",
-        "addressRegion": "RN",
-        "addressCountry": "BR"
-      },
-      "knowsAbout": [
-        "Backend Development",
-        "Fullstack Development",
-        "Node.js",
-        "JavaScript",
-        "React",
-        ".NET",
-        "C#",
-        "SQL",
-        "NoSQL",
-        "Docker",
-        "Git",
-        "Python",
-        "LLM",
-        "Prompt Engineering",
-        "Technical Support",
-        "IT Infrastructure"
-      ],
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Universidade do Estado do Rio Grande do Norte",
-          "description": "Ciência da Computação"
-        },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Anhanguera",
-          "description": "Análise e Desenvolvimento de Sistemas"
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anderson Coelho Goulart",
+        "jobTitle": "Desenvolvedor Backend / SRE",
+        "description": "Desenvolvedor Backend e Engenheiro de Suporte com 9+ anos de experiência",
+        "url": "https://andersongoulart.dev/",
+        "image": "https://media.licdn.com/dms/image/v2/D4D12AQGNqz51kIJNmw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1669923190542?e=2147483647&v=beta&t=tsQEZr_0yV0ntikVIruJHko0x5POYktt3CJBJIBT9xc",
+        "email": "acgoulartmail@gmail.com",
+        "sameAs": [
+          "https://github.com/acgoularthub",
+          "https://www.linkedin.com/in/acgoulart/"
+        ],
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Universidade do Estado do Rio Grande do Norte"
+          }
+        ],
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Docker",
+          "C#",
+          "Linux",
+          "DevOps",
+          "SRE"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Açu",
+          "addressRegion": "RN",
+          "addressCountry": "BR"
         }
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "certificate",
-          "name": "Oracle Cloud Foundation"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "certificate",
-          "name": "Google IT Professional"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "certificate",
-          "name": "Cyber Security Foundation"
-        }
-      ],
-      "workExample": [
-        {
-          "@type": "CreativeWork",
-          "name": "Backend Development",
-          "description": "Desenvolvimento de aplicações backend escaláveis com Node.js, .NET e Python"
-        }
-      ]
-    }
+      }
     </script>
+
+    <!-- ============================================
+         FONTES E ESTILOS
+         ============================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/lambda preto.png" />
   </head>
-  <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-    <!-- PRE LOADER -->
+  <body>
+    <!-- ============================================
+         NAVEGAÇÃO
+         ============================================ -->
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Navegação principal"
+    >
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo" aria-label="Ir para o início">
+          <span class="logo-text"
+            ><img src="images/lambda.png" alt="Logo" width="40" height="40"
+          /></span>
+        </a>
 
-    <div class="preloader">
-      <div class="spinner">
-        <span class="spinner-rotate"></span>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu" role="menubar">
+          <li role="none">
+            <a href="#sobre" class="nav-link" role="menuitem">Sobre</a>
+          </li>
+          <li role="none">
+            <a href="#experiencia" class="nav-link" role="menuitem"
+              >Experiência</a
+            >
+          </li>
+          <li role="none">
+            <a href="#habilidades" class="nav-link" role="menuitem"
+              >Habilidades</a
+            >
+          </li>
+          <li role="none">
+            <a href="#projetos" class="nav-link" role="menuitem">Projetos</a>
+          </li>
+          <li role="none">
+            <a href="#formacao" class="nav-link" role="menuitem">Formação</a>
+          </li>
+          <li role="none">
+            <a href="#contato" class="nav-link" role="menuitem">Contato</a>
+          </li>
+        </ul>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Alternar tema claro/escuro"
+        >
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+        </button>
       </div>
-    </div>
+    </nav>
 
-    <!-- Navigation Section -->
-
-    <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-      <div class="container">
-        <!-- navbar header -->
-        <div class="navbar-header">
-          <button
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target=".navbar-collapse"
-            aria-label="Toggle navigation"
-          >
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-          </button>
-          <a href="#home" class="navbar-brand smoothScroll" aria-label="Voltar ao início"></a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home" class="smoothScroll">Home</a></li>
-            <li><a href="#about" class="smoothScroll">Sobre mim</a></li>
-            <li><a href="#experience" class="smoothScroll">Experiencias</a></li>
-            <li><a href="#quotes" class="smoothScroll">Depoimentos</a></li>
-            <li><a href="#contact" class="smoothScroll">Contatos</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Home Section -->
-
-    <section id="home" class="parallax-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="home-img"></div>
-          </div>
-
-          <div class="col-md-6 col-sm-6">
-            <div class="home-thumb">
-              <div class="section-title">
-                <h4 class="wow fadeInUp" data-wow-delay="0.3s">
-                  Seja Bem-vindo
-                </h4>
-                <h1 class="wow fadeInUp" data-wow-delay="0.6s">
-                  Olá! Me chamo <strong>Anderson</strong>!
-                </h1>
-                <p class="wow fadeInUp" data-wow-delay="0.9s">
-                  Sou um <strong>programador backend e engenheiro de suporte</strong> 
-                  apaixonado por tecnologia e inovação, com mais de 9 anos de
-                  experiência em desenvolvimento de software, manutenção de computadores e infraestrutura de
-                  TI.<br />
-                  <br />
-                  Desenvolvedor de software e entusiasta de tecnologia, com uma
-                  trajetória dinâmica que entrelaça suporte técnico,
-                  infraestrutura de TI e desenvolvimento de software. Minha
-                  jornada profissional é marcada pela curiosidade incessante e
-                  pela busca constante de conhecimento nas áreas de tecnologia
-                  da informação.<br />
-                  <br />
-                  Como <strong>desenvolvedor</strong>, tenho conhecimentos em Node.js, JavaScript,
-                  React, .NET/C#, SQL, NoSQL, Docker, Git, Python, entre outros.
-                  <br />
-                  Atualmente estou estudando mais sobre LLM e seus usos, assim
-                  como prompt engineering, sempre focado em criar soluções escaláveis e eficientes.
-                </p>
-
-                <a
-                  href="#about"
-                  class="wow fadeInUp smoothScroll section-btn btn btn-success"
-                  data-wow-delay="1.4s"
-                  >Veja mais</a
+    <main>
+      <!-- ============================================
+             SEÇÃO HERO / APRESENTAÇÃO
+             ============================================ -->
+      <section id="hero" class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-image">
+              <img
+                src="images/profile.jpg"
+                alt="Foto de Anderson Coelho Goulart - Desenvolvedor Backend"
+                width="280"
+                height="280"
+                loading="eager"
+              />
+              <div class="hero-image-decoration"></div>
+            </div>
+            <div class="hero-text">
+              <p class="hero-greeting">Olá, eu sou</p>
+              <h1 class="hero-title">Anderson Coelho Goulart</h1>
+              <p class="hero-subtitle">
+                <span class="typing-text" id="typingText"></span>
+                <span class="cursor">|</span>
+              </p>
+              <p class="hero-description">
+                Desenvolvedor Backend e Engenheiro de Suporte com
+                <strong>9+ anos de experiência</strong>
+                em suporte técnico e infraestrutura de TI, mais recentemente em
+                desenvolvimento de software.
+              </p>
+              <div class="hero-cta">
+                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contato" class="btn btn-secondary"
+                  >Entre em Contato</a
                 >
               </div>
+              <div class="hero-social">
+                <a
+                  href="https://github.com/acgoularthub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Anderson Goulart"
+                  class="social-link"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/acgoulart/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn de Anderson Goulart"
+                  class="social-link"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="mailto:acgoulartmail@gmail.com"
+                  aria-label="Enviar email para Anderson Goulart"
+                  class="social-link"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#sobre"
+            class="scroll-indicator"
+            aria-label="Rolar para próxima seção"
+          >
+            <span class="scroll-arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============================================
+             SEÇÃO SOBRE MIM
+             ============================================ -->
+      <section id="sobre" class="section sobre">
+        <div class="container">
+          <h2 class="section-title">Sobre Mim</h2>
+          <div class="sobre-content">
+            <div class="sobre-text">
+              <p>
+                Sou um
+                <strong>Engenheiro de Suporte e Desenvolvedor Backend</strong>
+                apaixonado por tecnologia e inovação, com mais de 9 anos de
+                experiência em manutenção de computadores e infraestrutura de
+                TI.
+              </p>
+              <p>
+                Minha trajetória inclui formação em
+                <strong>Ciência da Computação</strong> e
+                <strong>Análise e Desenvolvimento de Sistemas</strong>,
+                complementada por pós-graduação em
+                <strong
+                  >Arquitetura de Infraestrutura e Segurança de Redes</strong
+                >.
+              </p>
+              <p>
+                Atualmente, meu foco está em desenvolvimento backend com
+                <strong>JavaScript/TypeScript</strong>,
+                <strong>Node.js</strong> e <strong>C#/.NET</strong>, além de
+                containerização com <strong>Docker</strong> e o aprendizado de
+                práticas <strong>DevOps</strong>. Meu objetivo profissional é
+                atuar como
+                <strong>Desenvolvedor Backend e futuramente como SRE</strong>,
+                contribuindo para sistemas escaláveis e resilientes.
+              </p>
+              <div class="sobre-stats">
+                <div class="stat-item">
+                  <span class="stat-number">9+</span>
+                  <span class="stat-label">Anos de Experiência</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">20+</span>
+                  <span class="stat-label">Projetos</span>
+                </div>
+              </div>
+            </div>
+            <div class="sobre-highlights">
+              <div class="highlight-card">
+                <span class="highlight-icon">🎯</span>
+                <h3>Objetivo</h3>
+                <p>
+                  Desenvolvedor Backend / SRE com foco em sistemas escaláveis
+                </p>
+              </div>
+              <div class="highlight-card">
+                <span class="highlight-icon">📍</span>
+                <h3>Localização</h3>
+                <p>Açu, Rio Grande do Norte, Brasil</p>
+              </div>
+              <div class="highlight-card">
+                <span class="highlight-icon">🌐</span>
+                <h3>Idiomas</h3>
+                <p>Português (nativo), Inglês (técnico)</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- About Section -->
-
-    <section id="about" class="parallax-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-thumb">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.4s">
-                <h1>Um pouco mais sobre mim</h1>
-                <p class="color-yellow">Equilibrando a tecnologia com a vida</p>
+      <!-- ============================================
+             SEÇÃO EXPERIÊNCIA PROFISSIONAL
+             ============================================
+             
+             COMO ADICIONAR NOVA EXPERIÊNCIA:
+             1. Copie o bloco <article class="timeline-item"> abaixo
+             2. Cole antes do comentário "FIM DAS EXPERIÊNCIAS"
+             3. Atualize: período, cargo, empresa e descrição
+             
+             TEMPLATE PARA NOVA EXPERIÊNCIA:
+             ─────────────────────────────────
+             <article class="timeline-item">
+                 <div class="timeline-marker"></div>
+                 <div class="timeline-content">
+                     <span class="timeline-date">Mês/Ano - Mês/Ano</span>
+                     <h3 class="timeline-title">Cargo/Posição</h3>
+                     <p class="timeline-company">Nome da Empresa</p>
+                     <p class="timeline-description">
+                         Descrição das responsabilidades e conquistas.
+                     </p>
+                     <div class="timeline-tags">
+                         <span class="tag">Tecnologia 1</span>
+                         <span class="tag">Tecnologia 2</span>
+                     </div>
+                 </div>
+             </article>
+             ─────────────────────────────────
+             ============================================ -->
+      <section id="experiencia" class="section experiencia">
+        <div class="container">
+          <h2 class="section-title">Experiência Profissional</h2>
+          <div class="timeline">
+            <!-- EXPERIÊNCIA 1 -->
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2025 - Presente</span>
+                <h3 class="timeline-title">Desenvolvedor de software</h3>
+                <p class="timeline-company">Message Center</p>
+                <p class="timeline-description">
+                  Responsável pelo desenvolvimento e sustentação de sistemas
+                  críticos especializados em entregabilidade de mensageria para
+                  grandes clientes corporativos. Atuação com tecnologias como
+                  .NET/C# e bancos de dados SQL e NoSQL.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">.NET</span>
+                  <span class="tag">C#</span>
+                  <span class="tag">SQL</span>
+                  <span class="tag">NoSQL</span>
+                </div>
               </div>
-              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                <p>
-                  Detenho formação acadêmica com graduação em Ciência da
-                  Computação e tecnólogo em Análise e Desenvolvimento de
-                  Sistemas. Pós-graduações em Arquitetura de Infraestrutura de
-                  TI e Segurança de Redes. Possuo certificações internacionais
-                  que atestam minha expertise técnica, como <strong>Oracle Cloud
-                  Foundation</strong>, <strong>Google IT Professional</strong> e <strong>Cyber Security
-                  Foundation</strong>.
+            </article>
+
+            <!-- EXPERIÊNCIA 2 -->
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2015 - Presente</span>
+                <h3 class="timeline-title">
+                  Suporte Técnico / Manutenção de hardware
+                </h3>
+                <p class="timeline-company">Freelance</p>
+                <p class="timeline-description">
+                  Manutenção e suporte de infraestrutura de TI. Administração de
+                  redes, servidores Linux e Windows. Implementação de soluções
+                  de segurança e backup. Atendimento técnico a usuários finais.
+                  Montagem e manutenção de computadores e ativos informáticos.
                 </p>
-                <p>
-                  Com mais de <strong>9 anos de experiência</strong> na área de tecnologia, 
-                  atuei em diversos projetos de <strong>desenvolvimento backend</strong>, 
-                  suporte técnico e infraestrutura. Minha especialidade está em criar 
-                  aplicações robustas e escaláveis, sempre aplicando as melhores práticas 
-                  de engenharia de software.
+                <div class="timeline-tags">
+                  <span class="tag">Linux</span>
+                  <span class="tag">Windows Server</span>
+                  <span class="tag">Redes</span>
+                  <span class="tag">Suporte</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2023 - 2024</span>
+                <h3 class="timeline-title">Customer Support Engineer</h3>
+                <p class="timeline-company">CloudWalk / InfinitePay</p>
+                <p class="timeline-description">
+                  Na linha de frente do atendimento ao cliente via e-mail,
+                  telefone ou chat, prestava suporte técnico especializado para
+                  resolver problemas relacionados aos serviços de pagamento da
+                  empresa. Colaborava com equipes internas para garantir a
+                  satisfação do cliente e a resolução eficiente de incidentes.
+                  Além disso, documentava processos e soluções para melhorar a
+                  base de conhecimento da equipe e trabalhava na manutenção e
+                  melhoria de sistemas internos de suporte, combinando
+                  conhecimentos de programação e atendimento ao cliente.
                 </p>
-                <p>
-                  Meu objetivo profissional é conquistar espaço no mercado de
-                  <strong>desenvolvedor de sistemas backend e fullstack</strong>, com foco em crescer para a
-                  área de Site Reliability Engineering (SRE), combinando minha
-                  experiência técnica com habilidades de resolução de problemas
-                  e inovação, mas estou aberto, no momento, a vagas de Customer
-                  Support e outras na área de tecnologia.
-                </p>
+                <div class="timeline-tags">
+                  <span class="tag">SQL</span>
+                  <span class="tag">Ruby</span>
+                  <span class="tag">Atendimento ao Cliente</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- FIM DAS EXPERIÊNCIAS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+             SEÇÃO HABILIDADES / TECNOLOGIAS
+             ============================================ -->
+      <section id="habilidades" class="section habilidades">
+        <div class="container">
+          <h2 class="section-title">Habilidades &amp; Tecnologias</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3 class="skill-category-title">
+                <span class="skill-icon">💻</span>
+                Linguagens
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">SQL</span>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-3 col-sm-6">
-            <div class="background-image about-img"></div>
-          </div>
-
-          <div class="bg-yellow col-md-3 col-sm-6">
-            <div class="skill-thumb">
-              <div
-                class="wow fadeInUp section-title color-white"
-                data-wow-delay="1.2s"
-              >
-                <h1>My Skills</h1>
-                <p class="color-white">Backend . Suporte . Linux</p>
+            <div class="skill-category">
+              <h3 class="skill-category-title">
+                <span class="skill-icon">⚙️</span>
+                Frameworks &amp; Runtime
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">.NET</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">Express.js</span>
               </div>
+            </div>
 
-              <div class="wow fadeInUp skills-thumb" data-wow-delay="1.6s">
-                <strong>FrontEnd</strong>
-                <span class="color-white pull-right">30%</span>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-primary"
-                    role="progressbar"
-                    aria-valuenow="30"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: 30%"
-                  ></div>
-                </div>
+            <!-- <div class="skill-category">
+              <h3 class="skill-category-title">
+                <span class="skill-icon">🐳</span>
+                DevOps &amp; Cloud
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Oracle Cloud</span>
+                <span class="skill-tag">Google Cloud</span>
+              </div>
+            </div> -->
 
-                <strong>BackEnd</strong>
-                <span class="color-white pull-right">80%</span>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-primary"
-                    role="progressbar"
-                    aria-valuenow="80"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: 80%"
-                  ></div>
-                </div>
+            <div class="skill-category">
+              <h3 class="skill-category-title">
+                <span class="skill-icon">🔐</span>
+                Segurança
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Cybersecurity</span>
+                <span class="skill-tag">Segurança de Redes</span>
+                <span class="skill-tag">Infraestrutura</span>
+              </div>
+            </div>
 
-                <strong>Suporte/Atendimento</strong>
-                <span class="color-white pull-right">90%</span>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-primary"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: 90%"
-                  ></div>
-                </div>
+            <div class="skill-category">
+              <h3 class="skill-category-title">
+                <span class="skill-icon">🌐</span>
+                Web Development
+              </h3>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">jQuery</span>
+                <span class="skill-tag">PHP</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Experience Section -->
+      <!-- ============================================
+             SEÇÃO PROJETOS / PORTFÓLIO
+             ============================================
+             
+             COMO ADICIONAR NOVO PROJETO:
+             1. Copie o bloco <article class="project-card"> abaixo
+             2. Cole antes do comentário "FIM DOS PROJETOS"
+             3. Atualize: imagem, título, descrição, tags e links
+             4. Para a thumbnail, use uma captura de tela (ex: 400x250px)
+             5. Salve a imagem em /images/ e atualize o src
+             
+             TEMPLATE PARA NOVO PROJETO:
+             ─────────────────────────────────
+             <article class="project-card">
+                 <div class="project-image">
+                     <img src="images/projeto-nome.jpg" alt="Screenshot do Projeto Nome" loading="lazy" width="400" height="250">
+                     <div class="project-overlay">
+                         <a href="URL_DEMO" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver demo do projeto">
+                             <span>🔗</span>
+                         </a>
+                         <a href="URL_GITHUB" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código no GitHub">
+                             <span>📂</span>
+                         </a>
+                     </div>
+                 </div>
+                 <div class="project-content">
+                     <h3 class="project-title">Nome do Projeto</h3>
+                     <p class="project-description">
+                         Descrição breve do projeto, suas funcionalidades e objetivo.
+                     </p>
+                     <div class="project-tags">
+                         <span class="tag">Tecnologia 1</span>
+                         <span class="tag">Tecnologia 2</span>
+                     </div>
+                 </div>
+             </article>
+             ─────────────────────────────────
+             ============================================ -->
+      <section id="projetos" class="section projetos">
+        <div class="container">
+          <h2 class="section-title">Projetos</h2>
+          <div class="projects-grid">
+            <!-- PROJETO 1 -->
 
-    <section id="experience" class="parallax-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="background-image experience-img"></div>
+            <!-- PROJETO 2 -->
+            <article class="project-card">
+              <div class="project-image">
+                <div class="project-placeholder">
+                  <span>💬</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="https://github.com/acgoularthub/Chatbot-controle-de-rotina"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Ver código do Chatbot no GitHub"
+                  >
+                    <span>📂</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Chatbot Controle de Rotina</h3>
+                <p class="project-description">
+                  Chatbot para WhatsApp utilizando Python e GPT-4 para controle
+                  e automação de rotinas diárias.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">GPT-4</span>
+                  <span class="tag">WhatsApp</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJETO 3 -->
+            <article class="project-card">
+              <div class="project-image">
+                <div class="project-placeholder">
+                  <span>📧</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="https://github.com/acgoularthub/EmailWorker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Ver código do EmailWorker no GitHub"
+                  >
+                    <span>📂</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">EmailWorker</h3>
+                <p class="project-description">
+                  Sistema automatizado para envio de e-mails em massa com
+                  gerenciamento de filas e templates.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Automação</span>
+                  <span class="tag">Email</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJETO 4 -->
+            <article class="project-card">
+              <div class="project-image">
+                <div class="project-placeholder">
+                  <span>📝</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="https://github.com/acgoularthub/Projeto-Blog-Programacao-Avancada"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Ver código do Blog no GitHub"
+                  >
+                    <span>📂</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Blog Django</h3>
+                <p class="project-description">
+                  Estruturação completa de blog utilizando Django, com sistema
+                  de posts, comentários e autenticação.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">Web</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJETO 5 -->
+            <article class="project-card">
+              <div class="project-image">
+                <div class="project-placeholder">
+                  <span>🔍</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="https://github.com/acgoularthub/portscan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Ver código do PortScan no GitHub"
+                  >
+                    <span>📂</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Port Scanner</h3>
+                <p class="project-description">
+                  Ferramenta de análise de portas de rede utilizando sockets e
+                  nmap para auditoria de segurança.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Security</span>
+                  <span class="tag">Networking</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJETO 6 -->
+            <article class="project-card">
+              <div class="project-image">
+                <div class="project-placeholder">
+                  <span>🎮</span>
+                </div>
+                <div class="project-overlay">
+                  <a
+                    href="https://github.com/acgoularthub/PyGame-Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Ver código do Snake Game no GitHub"
+                  >
+                    <span>📂</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Snake Game</h3>
+                <p class="project-description">
+                  Jogo clássico Snake desenvolvido com Pygame, demonstrando
+                  conceitos de game development.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Pygame</span>
+                  <span class="tag">Game Dev</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- FIM DOS PROJETOS -->
           </div>
 
-          <div class="col-md-6 col-sm-6">
-            <div class="color-white experience-thumb">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
-                <h1>Experiência</h1>
-                <p class="color-white">Previous companies and my tasks</p>
-              </div>
+          <div class="projects-cta">
+            <a
+              href="https://github.com/acgoularthub?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+            >
+              Ver Todos os Projetos no GitHub
+            </a>
+          </div>
+        </div>
+      </section>
 
-              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
-                <div class="media-object media-left">
-                  <i class="fa fa-laptop"></i>
+      <!-- ============================================
+             SEÇÃO FORMAÇÃO / CERTIFICAÇÕES
+             ============================================
+             
+             COMO ADICIONAR NOVA FORMAÇÃO:
+             1. Copie o bloco <article class="education-card"> abaixo
+             2. Cole na categoria apropriada (Acadêmica ou Certificações)
+             3. Atualize: ícone, título, instituição e período
+             
+             TEMPLATE PARA NOVA FORMAÇÃO:
+             ─────────────────────────────────
+             <article class="education-card">
+                 <span class="education-icon">🎓</span>
+                 <div class="education-content">
+                     <h3 class="education-title">Nome do Curso/Certificação</h3>
+                     <p class="education-institution">Nome da Instituição</p>
+                     <span class="education-date">Ano ou Período</span>
+                 </div>
+             </article>
+             ─────────────────────────────────
+             ============================================ -->
+      <section id="formacao" class="section formacao">
+        <div class="container">
+          <h2 class="section-title">Formação &amp; Certificações</h2>
+
+          <div class="education-grid">
+            <!-- FORMAÇÃO ACADÊMICA -->
+            <div class="education-category">
+              <h3 class="education-category-title">Formação Acadêmica</h3>
+
+              <article class="education-card">
+                <span class="education-icon">🎓</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Pós-Graduação em Arquitetura de Infraestrutura e Segurança
+                    de Redes
+                  </h4>
+                  <p class="education-institution">Instituição de Ensino</p>
                 </div>
-                <div class="media-body">
-                  <h3 class="media-heading">
-                    Customer Support Engineer - CloudWalk <br />
-                    <small>maio 2023 - novembro 2024</small>
-                  </h3>
-                  <p class="color-white">
-                    - Deliver service and support to customers answering chats,
-                    emails, and phone calls; - Provide responses to inquiries,
-                    concerns, and requests about products and services; -
-                    Determine issues by gathering customer information and by
-                    diagnosing symptoms; - Troubleshoot technical and software
-                    issues involving internet connectivity, login problems, and
-                    more; - Constantly innovate through technology to improve
-                    customer service and support processes. - Proactively
-                    identify areas for improvement, suggest ways to implement
-                    new technology to enhance our customer experience and follow
-                    the execution.
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🎓</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Bacharelado em Ciência da Computação
+                  </h4>
+                  <p class="education-institution">
+                    Universidade do Estado do Rio Grande do Norte
                   </p>
                 </div>
-              </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🎓</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Tecnólogo em Análise e Desenvolvimento de Sistemas
+                  </h4>
+                  <p class="education-institution">Anhanguera Educacional</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- CERTIFICAÇÕES -->
+            <div class="education-category">
+              <h3 class="education-category-title">Certificações</h3>
+
+              <article class="education-card">
+                <span class="education-icon">☁️</span>
+                <div class="education-content">
+                  <h4 class="education-title">Oracle Cloud Foundation</h4>
+                  <p class="education-institution">Oracle</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🔧</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Google IT Support Professional Certificate
+                  </h4>
+                  <p class="education-institution">Google / Coursera</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🔐</span>
+                <div class="education-content">
+                  <h4 class="education-title">Cyber Security Foundation</h4>
+                  <p class="education-institution">CertiProf</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🔒</span>
+                <div class="education-content">
+                  <h4 class="education-title">Introduction to Cybersecurity</h4>
+                  <p class="education-institution">Cisco</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🐳</span>
+                <div class="education-content">
+                  <h4 class="education-title">Docker</h4>
+                  <p class="education-institution">LinuxTips</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">📋</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Scrum Foundation Professional Certificate
+                  </h4>
+                  <p class="education-institution">CertiProf</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">☁️</span>
+                <div class="education-content">
+                  <h4 class="education-title">Cloud Infrastructure (GCP)</h4>
+                  <p class="education-institution">Google / Coursera</p>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <span class="education-icon">🏠</span>
+                <div class="education-content">
+                  <h4 class="education-title">
+                    Remote Work Professional Certificate
+                  </h4>
+                  <p class="education-institution">CertiProf</p>
+                </div>
+              </article>
+
+              <!-- FIM DAS CERTIFICAÇÕES -->
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Education Section -->
+      <!-- ============================================
+             SEÇÃO CONTATO
+             ============================================ -->
+      <section id="contato" class="section contato">
+        <div class="container">
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">
+            Tem um projeto em mente ou quer conversar sobre oportunidades?
+            Ficarei feliz em responder!
+          </p>
 
-    <section id="education" class="parallax-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="color-white education-thumb">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
-                <h1>Formação</h1>
-                <p class="color-white desc">
-                  Apesar de minhas graduações, estou sempre buscando aprender
-                  mais!
-                </p>
-              </div>
-
-              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
-                <div class="media-object media-left">
-                  <i class="fa fa-laptop"></i>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading">
-                    Análise e Desenvolvimento de Sistemas (Anhanguera)<br /><small
-                      >2020 - 2023 May</small
-                    >
-                  </h3>
-                  <p class="color-white desc">
-                    O curso de Análise e Desenvolvimento de Sistemas forma
-                    profissionais para projetar, desenvolver e manter sistemas
-                    computacionais, focando em programação, banco de dados e
-                    engenharia de software.
-                  </p>
-                </div>
-              </div>
-
-              <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
-                <div class="media-object media-left">
-                  <i class="fa fa-laptop"></i>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading">
-                    Ciência da computação (Universidade do estado do Rio Grande
-                    do Norte)<br />
-                    <small>Em andamento</small>
-                  </h3>
-                  <p class="color-white desc">
-                    O curso de Ciência da Computação forma profissionais para
-                    desenvolver soluções computacionais, abrangendo algoritmos,
-                    programação, inteligência artificial e segurança.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-sm-6">
-            <div class="background-image education-img"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quotes Section -->
-
-    <section id="quotes" class="parallax-section">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10 col-sm-12">
-            <i class="wow fadeInUp fa fa-star" data-wow-delay="0.6s"></i>
-            <h2 class="wow fadeInUp" data-wow-delay="0.8s">
-              Anderson é um profissional competente, dedicado, e apresenta uma
-              excelente ética profissional, além de ter um mindset de
-              crescimento, procurando sempre qualificações e aprimoramento de
-              suas habilidades e qualidades profissionais.
-            </h2>
-            <p class="wow fadeInUp whitening" data-wow-delay="1s">
-              Marcos Vinicius Diógenes (Citação parcial obtida no
-              <a href="https://www.linkedin.com/in/acgoulart/" target="_blank" rel="noopener noreferrer"
-                >LinkedIn</a
-              >)
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-
-    <section id="contact" class="parallax-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="contact-form">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-                <h1 class="color-white">Diga algo!</h1>
-                <p class="color-white">
-                  Entre em contato comigo através do formulário ou pelos links ao lado
-                </p>
-              </div>
-
-              <div id="contact-form">
-                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-                  <!-- Web3Forms Access Key -->
-                  <input type="hidden" name="access_key" value="0163ee4e-60a0-4591-bc4e-009c13788bf7">
-                  <input type="hidden" name="subject" value="Nova mensagem do portfólio">
-                  <input type="hidden" name="redirect" value="https://www.acgoulart.pro/#contact">
-                  <input type="hidden" name="from_name" value="Portfolio Anderson Goulart">
-                  
-                  <div class="wow fadeInUp" data-wow-delay="1s">
-                    <input
-                      name="name"
-                      type="text"
-                      class="form-control"
-                      id="fullname"
-                      placeholder="Seu nome"
-                      autocomplete="name"
-                      required
-                    />
-                  </div>
-                  <div class="wow fadeInUp" data-wow-delay="1.2s">
-                    <input
-                      name="email"
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      placeholder="Seu e-mail"
-                      autocomplete="email"
-                      required
-                    />
-                  </div>
-                  <div class="wow fadeInUp" data-wow-delay="1.4s">
-                    <textarea
-                      name="message"
-                      rows="5"
-                      class="form-control"
-                      id="message"
-                      placeholder="Escreva sua mensagem"
-                      required
-                    ></textarea>
-                  </div>
-                  <div
-                    class="wow fadeInUp col-md-6 col-sm-8"
-                    data-wow-delay="1.6s"
+          <div class="contato-grid">
+            <div class="contato-info">
+              <div class="contato-item">
+                <span class="contato-icon">📧</span>
+                <div>
+                  <h3>Email</h3>
+                  <a href="mailto:acgoulartmail@gmail.com"
+                    >acgoulartmail@gmail.com</a
                   >
-                    <input
-                      name="submit"
-                      type="submit"
-                      class="form-control"
-                      id="submit"
-                      value="Enviar"
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <div id="form-message" style="margin-top: 20px;"></div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6">
-            <div class="background-image contact-img"></div>
-          </div>
-
-          <div class="bg-dark col-md-3 col-sm-6">
-            <div class="contact-thumb">
-              <div class="wow fadeInUp contact-info" data-wow-delay="0.6s">
-                <!-- <h3 class="color-white">Visit my office</h3>
-                <p>456 New Street 22000, New York City, USA</p> -->
+                </div>
               </div>
 
-              <div
-                class="wow fadeInUp contact-info infoo"
-                data-wow-delay="0.8s"
-              >
-                <h3 class="color-white">Contato.</h3>
-                <p>
-                  <i class="fa fa-envelope-o"></i>
-                  <a href="mailto:anderson@acgoulart.pro" target="_blank" rel="noopener noreferrer"
-                    >anderson@acgoulart.pro</a
-                  >
-                </p>
-                <p>
-                  <i class="fa fa-globe"></i>
-                  <a href="https://www.acgoulart.pro" target="_blank" rel="noopener noreferrer">acgoulart.pro</a>
-                </p>
-
-                <p>
-                  <i class="fa fa-globe"></i>
-                  <a href="https://github.com/acgoularthub" target="_blank" rel="noopener noreferrer"
-                    >github.com/acgoularthub</a
-                  >
-                </p>
-
-                <p>
-                  <i class="fa fa-linkedin"></i>
-                  <a href="https://www.linkedin.com/in/acgoulart/" target="_blank" rel="noopener noreferrer"
+              <div class="contato-item">
+                <span class="contato-icon">💼</span>
+                <div>
+                  <h3>LinkedIn</h3>
+                  <a
+                    href="https://www.linkedin.com/in/acgoulart/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >linkedin.com/in/acgoulart</a
                   >
-                </p>
+                </div>
+              </div>
+
+              <div class="contato-item">
+                <span class="contato-icon">🐙</span>
+                <div>
+                  <h3>GitHub</h3>
+                  <a
+                    href="https://github.com/acgoularthub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/acgoularthub</a
+                  >
+                </div>
+              </div>
+
+              <div class="contato-item">
+                <span class="contato-icon">📍</span>
+                <div>
+                  <h3>Localização</h3>
+                  <p>Açu, RN - Brasil</p>
+                </div>
               </div>
             </div>
+
+            <!-- FORMULÁRIO DE CONTATO COM FORMSPREE -->
+            <form
+              class="contato-form"
+              id="contactForm"
+              action="https://formspree.io/f/mbdkbabr"
+              method="POST"
+              novalidate
+            >
+              <!-- Honeypot para bots (campo oculto) -->
+              <input type="text" name="_gotcha" style="display: none" />
+
+              <!-- Redirecionar após envio -->
+              <input
+                type="hidden"
+                name="_next"
+                value="https://andersongoulart.dev/#contato"
+              />
+
+              <!-- Assunto do email -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Novo contato via Portfolio"
+              />
+
+              <div class="form-group">
+                <label for="name">Nome *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  minlength="2"
+                  maxlength="100"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                />
+                <span class="error-message" id="nameError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                />
+                <span class="error-message" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensagem *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  minlength="10"
+                  maxlength="2000"
+                  placeholder="Sua mensagem..."
+                ></textarea>
+                <span class="error-message" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Enviar Mensagem</span>
+                <span class="btn-loading" style="display: none"
+                  >Enviando...</span
+                >
+              </button>
+
+              <div class="form-status" id="formStatus"></div>
+            </form>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer Section -->
-
-    <footer>
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="wow fadeInUp footer-copyright" data-wow-delay="1.8s">
-              <p>
-                Copyright &copy; 2025 Anderson Coelho Goulart | Design:
-                <a href="https://templatemo.com/" target="_blank" rel="noopener noreferrer"
-                  >templatemo</a
-                >
-              </p>
-            </div>
-            <!-- <ul class="wow fadeInUp social-icon" data-wow-delay="2s">
-              <li><a href="#" class="fa fa-facebook"></a></li>
-              <li><a href="#" class="fa fa-twitter"></a></li>
-              <li><a href="#" class="fa fa-google-plus"></a></li>
-              <li><a href="#" class="fa fa-dribbble"></a></li>
-              <li><a href="#" class="fa fa-linkedin"></a></li>
-            </ul> -->
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-text">Anderson Goulart</span>
+            <p>Desenvolvedor Backend &amp; SRE</p>
           </div>
+
+          <nav class="footer-nav" aria-label="Links do rodapé">
+            <a href="#sobre">Sobre</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+
+          <div class="footer-social">
+            <a
+              href="https://github.com/acgoularthub"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/acgoulart/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a href="mailto:acgoulartmail@gmail.com" aria-label="Email">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="currentYear"></span> Anderson Coelho Goulart. Todos
+            os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </button>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.parallax.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/custom.js"></script>
-    
-    <!-- Script para Web3Forms -->
-    <script>
-      const form = document.getElementById('contactForm');
-      const formMessage = document.getElementById('form-message');
-      
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const submitButton = document.getElementById('submit');
-        const originalValue = submitButton.value;
-        
-        // Loading state
-        submitButton.value = 'Enviando...';
-        submitButton.disabled = true;
-        formMessage.innerHTML = '';
-        
-        const formData = new FormData(form);
-        
-        try {
-          const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-          });
-          
-          const data = await response.json();
-          
-          if (data.success) {
-            formMessage.innerHTML = '<p style="color: #4CAF50; font-weight: bold;">✓ Mensagem enviada com sucesso! Obrigado pelo contato.</p>';
-            form.reset();
-          } else {
-            formMessage.innerHTML = '<p style="color: #f44336; font-weight: bold;">✗ Erro ao enviar mensagem. Por favor, tente novamente.</p>';
-          }
-        } catch (error) {
-          formMessage.innerHTML = '<p style="color: #f44336; font-weight: bold;">✗ Erro ao enviar mensagem. Por favor, tente novamente.</p>';
-        } finally {
-          submitButton.value = originalValue;
-          submitButton.disabled = false;
-        }
-      });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>

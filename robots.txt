@@ -12,7 +12,7 @@ Disallow: /private/
 Disallow: /*.json$
 
 # Sitemap
-Sitemap: https://acgoulart.pro/sitemap.xml
+Sitemap: https://andersongoulart.dev/sitemap.xml
 
 # Crawl-delay para evitar sobrecarga (opcional)
 Crawl-delay: 10

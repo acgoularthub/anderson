@@ -15,4 +15,4 @@ Disallow: /*.json$
 Sitemap: https://andersongoulart.dev/sitemap.xml
 
 # Crawl-delay para evitar sobrecarga (opcional)
-Crawl-delay: 10
+Crawl-delay: 1

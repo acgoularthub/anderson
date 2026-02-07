@@ -1,7 +1,5 @@
 # Página de Apresentação Pessoal
 
-Este é um projeto de página de apresentação pessoal utilizando um template da [templatemo](https://templatemo.com/).
-
 ## Descrição
 
 Este projeto é uma página de apresentação pessoal que inclui seções sobre mim, minhas habilidades, experiência, formação e depoimentos. A página foi construída utilizando HTML, CSS e JavaScript, e faz uso de bibliotecas como Bootstrap, jQuery e WOW.js para animações.
@@ -19,12 +17,6 @@ Este projeto é uma página de apresentação pessoal que inclui seções sobre 
     ```
 
 3. Abra o arquivo `index.html` no seu navegador para visualizar a página.
-
-## Créditos
-
-- Template utilizado: [Stimulus](https://templatemo.com/tm-498-stimulus) da templatemo.
-- Ícones: [Font Awesome](https://fontawesome.com/).
-- Animações: [WOW.js](https://wowjs.uk/).
 
 ## Contato
 
